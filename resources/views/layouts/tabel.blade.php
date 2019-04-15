@@ -53,13 +53,9 @@
 		============================================ -->
     <link rel="stylesheet" href="css/calendar/fullcalendar.min.css">
     <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
-    <!-- style CSS
-		============================================ -->
-    <link rel="stylesheet" href="style.css">
-
     <!-- x-editor CSS
 		============================================ -->
-        <link rel="stylesheet" href="css/editor/select2.css">
+    <link rel="stylesheet" href="css/editor/select2.css">
     <link rel="stylesheet" href="css/editor/datetimepicker.css">
     <link rel="stylesheet" href="css/editor/bootstrap-editable.css">
     <link rel="stylesheet" href="css/editor/x-editor-style.css">
@@ -67,9 +63,11 @@
 		============================================ -->
     <link rel="stylesheet" href="css/data-table/bootstrap-table.css">
     <link rel="stylesheet" href="css/data-table/bootstrap-editable.css">
-
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="style.css">
     <!-- responsive CSS
-        ============================================ -->
+		============================================ -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- modernizr JS
 		============================================ -->
@@ -80,6 +78,7 @@
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
+    
     <!-- Start Left menu area -->
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
@@ -91,7 +90,7 @@
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a title="Landing Page" href="" aria-expanded="false"><span class="educate-icon educate-home icon-wrap"></span> <span class="mini-click-non">Dashboard</span></a>
+                            <a title="Landing Page" href="{{route('dashboard')}}" aria-expanded="false"><span class="educate-icon educate-home icon-wrap"></span> <span class="mini-click-non">Dashboard</span></a>
                         </li>
                         <li>
                             <a class="has-arrow" href="#" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Data Pegawai</span></a>
@@ -121,12 +120,20 @@
                                 <li><a title="Data Table" href="{{route('tabelsk')}}"><span class="mini-sub-pro">Lihat Data </span></a></li>
                             </ul>
                         </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Gaji Pegawai</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Data Table" href="{{route('addsk')}}"><span class="mini-sub-pro">Tambah Data</span></a></li>
+                                <li><a title="Data Table" href="{{route('tabelsk')}}"><span class="mini-sub-pro">Lihat Data </span></a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
         </nav>
     </div>
     <!-- End Left menu area -->
+
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
         <div class="container-fluid">
@@ -160,6 +167,17 @@
                                                 <li class="nav-item"><a href="#" class="nav-link">About</a>
                                                 </li>
                                                 <li class="nav-item"><a href="#" class="nav-link">Services</a>
+                                                </li>
+                                                <li class="nav-item dropdown res-dis-nn">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Project <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
+                                                    <div role="menu" class="dropdown-menu animated zoomIn">
+                                                        <a href="#" class="dropdown-item">Documentation</a>
+                                                        <a href="#" class="dropdown-item">Expert Backend</a>
+                                                        <a href="#" class="dropdown-item">Expert FrontEnd</a>
+                                                        <a href="#" class="dropdown-item">Contact Support</a>
+                                                    </div>
+                                                </li>
+                                                <li class="nav-item"><a href="#" class="nav-link">Support</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -754,11 +772,9 @@
                 </div>
             </div>
             
-        </div>
-        
-        @yield('content')
-        
-        <div class="footer-copyright-area">
+            @yield('content')
+
+            <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -795,11 +811,6 @@
     <!-- scrollUp JS
 		============================================ -->
     <script src="js/jquery.scrollUp.min.js"></script>
-    <!-- counterup JS
-		============================================ -->
-    <script src="js/counterup/jquery.counterup.min.js"></script>
-    <script src="js/counterup/waypoints.min.js"></script>
-    <script src="js/counterup/counterup-active.js"></script>
     <!-- mCustomScrollbar JS
 		============================================ -->
     <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -808,14 +819,9 @@
 		============================================ -->
     <script src="js/metisMenu/metisMenu.min.js"></script>
     <script src="js/metisMenu/metisMenu-active.js"></script>
-    <!-- morrisjs JS
-		============================================ -->
-    <script src="js/morrisjs/raphael-min.js"></script>
-    <script src="js/morrisjs/morris.js"></script>
-    <script src="js/morrisjs/morris-active.js"></script>
     <!-- data table JS
 		============================================ -->
-        <script src="js/data-table/bootstrap-table.js"></script>
+    <script src="js/data-table/bootstrap-table.js"></script>
     <script src="js/data-table/tableExport.js"></script>
     <script src="js/data-table/data-table-active.js"></script>
     <script src="js/data-table/bootstrap-table-editable.js"></script>
@@ -833,22 +839,12 @@
     <script src="js/editable/bootstrap-editable.js"></script>
     <script src="js/editable/xediable-active.js"></script>
     <!-- Chart JS
-        ============================================ -->
+		============================================ -->
     <script src="js/chart/jquery.peity.min.js"></script>
     <script src="js/peity/peity-active.js"></script>
-    <!-- morrisjs JS
-		============================================ -->
-    <script src="js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="js/sparkline/jquery.charts-sparkline.js"></script>
-    <script src="js/sparkline/sparkline-active.js"></script>
-    <!-- calendar JS
-		============================================ -->
-    <script src="js/calendar/moment.min.js"></script>
-    <script src="js/calendar/fullcalendar.min.js"></script>
-    <script src="js/calendar/fullcalendar-active.js"></script>
     <!-- tab JS
 		============================================ -->
-        <script src="js/tab.js"></script>
+    <script src="js/tab.js"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="js/plugins.js"></script>
