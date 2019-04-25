@@ -51,13 +51,13 @@
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
                                                 <th data-field="id">ID</th>
-                                                <th data-field="nip" data-editable="true">NIP</th>
-                                                <th data-field="nama_pegawai" data-editable="true">Nama</th>
-                                                <th data-field="ttl" data-editable="true">ttl</th>
-                                                <th data-field="jenis_kelamin" data-editable="true">Jenis Kelamin</th>
+                                                <th data-field="nip">NIP</th>
+                                                <th data-field="nama_pegawai">Nama</th>
+                                                <th data-field="ttl">ttl</th>
+                                                <th data-field="jenis_kelamin">Jenis Kelamin</th>
                                                 <th data-field="agama">Agama</th>
-                                                <th data-field="alamat" data-editable="true">Alamat</th>
-                                                <th data-field="no_telepon" data-editable="true">No telepon</th>
+                                                <th data-field="alamat">Alamat</th>
+                                                <th data-field="no_telepon">No telepon</th>
                                                 <th data-field="action">Action</th>
                                             </tr>
                                         </thead>
@@ -73,8 +73,8 @@
                                                 <td>{{ $p->alamat }}</td>
                                                 <td>{{ $p->no_telepon }}</td>
 			                                    <td>
-                                                <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a href="{{url('addpegawai')}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></a></i></button>
-                                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><a href="{{url('')}}"><i class="fa fa-trash-o" aria-hidden="true"></a></i></button>
+                                                <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a href="/editpegawai/{{ $p->id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></a></i></button>
+                                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><a href="/deletepegawai/{{ $p->id }}"><i class="fa fa-trash-o" aria-hidden="true"></a></i></button>
 			                                    </td>
 		                                    </tr>
 		                                    @endforeach

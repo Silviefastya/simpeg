@@ -16,9 +16,15 @@ Route::get('/', function () {
 });
 
 //pegawai
-Route::get('addpegawai', function() {
-	return view('simpeg.addpegawai');
+Route::get('addpegawai','PegawaiController@addpegawai', function() {
 })->name('addpegawai');
+
+Route::post('/storepegawai','PegawaiController@storepegawai');
+
+Route::get('/editpegawai/{id}','PegawaiController@editpegawai');
+Route::post('/updatepegawai','PegawaiController@updatepegawai');
+
+Route::get('/deletepegawai/{id}','PegawaiController@deletepegawai');
 
 Route::get('tabelpegawai','pegawaiController@tabelpegawai', function() {
 	return view('simpeg.tabelpegawai');
