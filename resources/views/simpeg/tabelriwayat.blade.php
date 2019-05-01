@@ -51,12 +51,12 @@
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
                                                 <th data-field="id">ID</th>
-                                                <th data-field="pegawai_id" data-editable="true">ID pegawai</th>
-                                                <th data-field="jenjang" data-editable="true">Jenjang</th>
-                                                <th data-field="jurusan" data-editable="true">Jurusan</th>
-                                                <th data-field="nama_sekolah" data-editable="true">Nama Sekolah</th>
+                                                <th data-field="pegawai_id" >ID pegawai</th>
+                                                <th data-field="jenjang" >Jenjang</th>
+                                                <th data-field="jurusan" >Jurusan</th>
+                                                <th data-field="nama_sekolah" >Nama Sekolah</th>
                                                 <th data-field="tahun_masuk">Tahun Masuk</th>
-                                                <th data-field="tahun_lulus" data-editable="true">Tahun Lulus</th>
+                                                <th data-field="tahun_lulus" >Tahun Lulus</th>
                                                 <th data-field="action">Action</th>
                                             </tr>
                                         </thead>
@@ -71,8 +71,8 @@
 			                                    <td>{{ $rp->tahun_masuk }}</td>
                                                 <td>{{ $rp->tahun_lulus }}</td>
 			                                    <td>
-				                                <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a href="{{url('addpegawai')}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></a></i></button>
-                                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><a href="{{url('')}}"><i class="fa fa-trash-o" aria-hidden="true"></a></i></button>
+				                                <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a href="/editriwayat/{{ $rp->id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></a></i></button>
+                                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><a href="/deleteriwayat/{{ $rp->id }}"><i class="fa fa-trash-o" aria-hidden="true"></a></i></button>
 			                                    </td>
 		                                    </tr>
 		                                    @endforeach

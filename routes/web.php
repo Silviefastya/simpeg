@@ -21,7 +21,11 @@ Route::get('addpegawai','PegawaiController@addpegawai', function() {
 
 Route::post('/storepegawai','PegawaiController@storepegawai');
 
-Route::get('/editpegawai/{id}','PegawaiController@editpegawai');
+Route::get('/editpegawai/{id}','PegawaiController@editpegawai', function(){
+	return view('simpeg.editpegawai');
+})->name('editpegawai');
+
+
 Route::post('/updatepegawai','PegawaiController@updatepegawai');
 
 Route::get('/deletepegawai/{id}','PegawaiController@deletepegawai');
@@ -32,18 +36,28 @@ Route::get('tabelpegawai','pegawaiController@tabelpegawai', function() {
 
 
 //keluarga
-Route::get('addkeluarga', function() {
+Route::get('addkeluarga','keluargaController@addkeluarga', function() {
 	return view('simpeg.addkeluarga');
 })->name('addkeluarga');
+
+Route::post('/storekeluarga','keluargaController@storekeluarga');
+
+Route::get('/deletekeluarga/{id}','keluargaController@deletekeluarga');
 
 Route::get('tabelkeluarga', 'keluargaController@tabelkeluarga', function() {
 	return view('simpeg.tabelkeluarga');
 })->name('tabelkeluarga');
 
+
+
 //riwayat_pendidikan
 Route::get('addriwayat', function() {
 	return view('simpeg.addriwayat');
 })->name('addriwayat');
+
+Route::post('/storeriwayat','riwayatController@storeriwayat');
+
+Route::get('/deleteriwayat/{id}','riwayatController@deleteriwayat');
 
 Route::get('tabelriwayat','riwayatController@tabelriwayat', function() {
 	return view('simpeg.tabelriwayat');

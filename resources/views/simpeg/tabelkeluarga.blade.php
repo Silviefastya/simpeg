@@ -14,7 +14,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Data Pegawai</span>
+                                            <li><span class="bread-blod">Data Keluarga</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -51,10 +51,10 @@
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
                                                 <th data-field="id">ID</th>
-                                                <th data-field="pegawai_id" data-editable="true">ID Pegawai</th>
-                                                <th data-field="status_nikah" data-editable="true">Status Nikah</th>
-                                                <th data-field="nama_pasangan" data-editable="true">Nama Pasangan</th>
-                                                <th data-field="ttl_pasangan" data-editable="true">TTL</th>
+                                                <th data-field="pegawai_id">ID Pegawai</th>
+                                                <th data-field="status_nikah">Status Nikah</th>
+                                                <th data-field="nama_pasangan">Nama Pasangan</th>
+                                                <th data-field="ttl_pasangan">TTL</th>
                                                 <th data-field="jml_anak">Jumlah Anak</th>
                                                 <th data-field="action">Action</th>
                                             </tr>
@@ -69,8 +69,8 @@
 			                                    <td>{{ $k->ttl_pasangan }}</td>
 			                                    <td>{{ $k->jml_anak }}</td>
 			                                    <td>
-                                                <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a href="{{url('addpegawai')}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></a></i></button>
-                                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><a href="{{url('')}}"><i class="fa fa-trash-o" aria-hidden="true"></a></i></button>
+                                                <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a href="/editkeluarga/{{ $k->id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></a></i></button>
+                                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><a href="/deletekeluarga/{{ $k->id }}"><i class="fa fa-trash-o" aria-hidden="true"></a></i></button>
 			                                    </td>
 		                                    </tr>
 		                                    @endforeach

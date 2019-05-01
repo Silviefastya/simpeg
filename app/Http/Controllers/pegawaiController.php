@@ -55,7 +55,7 @@ class pegawaiController extends Controller
 	}
 
 	// update data pegawai
-	public function update(Request $request)
+	public function updatepegawai(Request $request)
 	{
 	// update data pegawai
 	DB::table('pegawai')->where('id',$request->id)->update([
