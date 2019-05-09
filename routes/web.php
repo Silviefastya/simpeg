@@ -22,11 +22,10 @@ Route::get('addpegawai','PegawaiController@addpegawai', function() {
 Route::post('/storepegawai','PegawaiController@storepegawai');
 
 Route::get('/editpegawai/{id}','PegawaiController@editpegawai', function(){
-	return view('simpeg.editpegawai');
 })->name('editpegawai');
 
 
-Route::post('/updatepegawai','PegawaiController@updatepegawai');
+Route::post('/updatepegawai/{id}','PegawaiController@updatepegawai');
 
 Route::get('/deletepegawai/{id}','PegawaiController@deletepegawai');
 

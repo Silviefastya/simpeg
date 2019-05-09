@@ -73,7 +73,7 @@
                                                 <td>{{ $p->alamat }}</td>
                                                 <td>{{ $p->no_telepon }}</td>
 			                                    <td>
-                                                <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a href="editpegawai/{{ $p->id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></a></i></button>
+                                                <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a href="/editpegawai/{{ $p->id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></a></i></button>
                                                 <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><a href="/deletepegawai/{{ $p->id }}"><i class="fa fa-trash-o" aria-hidden="true"></a></i></button>
 			                                    </td>
 		                                    </tr>

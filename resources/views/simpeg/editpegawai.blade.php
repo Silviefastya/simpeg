@@ -1,126 +1,19 @@
-@extends('layouts.form')
+@extends('layouts.edit')
 @section('content')
+ <!-- Basic Form End-->
+ @foreach($pegawai as $p)
+	<form action="/updatepegawai/{{ $p->id }}" method="post">
+		{{ csrf_field() }}
+        <input type="hidden" name="id" value="{{ $p->id }}"> <br/>
+        NIP <input type="text" required="required" name="nip" value="{{ $p->nip }}"> <br/>
+        Nama <input type="text" required="required" name="nama_pegawai" value="{{ $p->nama_pegawai }}"> <br/>
+        TTL <input type="text" required="required" name="ttl" value="{{ $p->ttl }}"> <br/>
+		Jenis Kelamin <input type="text" required="required" name="jenis_kelamin" value="{{ $p->jenis_kelamin }}"> <br/>
+        Agama <input type="text" required="required" name="agama" value="{{ $p->agama }}"> <br/>
+        Alamat <textarea required="required" name="alamat">{{ $p->alamat }}</textarea> <br/>
+        Telepon <input type="text" required="required" name="no_telepon" value="{{ $p->no_telepon }}"> <br/>
+		<input type="submit" value="Simpan Data">
+	</form>
+	@endforeach
 
-<div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="sparkline12-list">
-                            <div class="sparkline12-hd">
-                                <div class="main-sparkline12-hd">
-                                    <h1>Edit Data Pegawai</h1>
-                                </div>
-                            </div>
-                            <div class="sparkline12-graph">
-                                <div class="basic-login-form-ad">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="all-form-element-inner">
-                                                <form action="editpegawai" method="post">
-                                                {{ csrf_field() }}
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">ID</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="id" required="required" class="form-control" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">NIP</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="nip" required="required" class="form-control" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Nama</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="nama_pegawai" required="required" class="form-control" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Tempat, Tanggal Lahir</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="ttl" required="required" class="form-control" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Jenis Kelamin</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="jenis_kelamin" required="required" class="form-control" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Agama</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="agama" required="required" class="form-control" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Alamat</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="alamat" required="required" class="form-control" placeholder="Placeholder" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">No Telepon</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="no_telepon" required="required" class="form-control" placeholder="*wajib diisi" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    
-                                                    <div class="form-group-inner">
-                                                        <div class="login-btn-inner">
-                                                            <div class="row">
-                                                                <div class="col-lg-3"></div>
-                                                                <div class="col-lg-9">
-                                                                    <div class="login-horizental cancel-wp pull-left form-bc-ele">
-                                                                        <button class="btn btn-white" type="submit">Cancel</button>
-                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Save Change</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 @endsection
