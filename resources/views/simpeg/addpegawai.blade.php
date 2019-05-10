@@ -1,12 +1,34 @@
 @extends('layouts.form')
 @section('content')
-
+<div class="breadcome-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcome-list single-page-breadcome">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="breadcome-heading">
+                                        <h4> FORM PEGAWAI </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Basic Form Start -->
+        <div class="basic-form-area mg-b-15">
+            <div class="container-fluid">
+                
+        <!-- Basic Form End-->
 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="sparkline12-list">
                             <div class="sparkline12-hd">
                                 <div class="main-sparkline12-hd">
-                                    <h1>Tambah Data Pegawai</h1>
+                                    
                                 </div>
                             </div>
                             <div class="sparkline12-graph">
@@ -106,7 +128,7 @@
                                                                 <div class="col-lg-9">
                                                                     <div class="login-horizental cancel-wp pull-left form-bc-ele">
                                                                         <button class="btn btn-white" type="submit">Cancel</button>
-                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Save Change</button>
+                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Submit</button>
                                                                     </div>
                                                                 </div>
                                                             </div>

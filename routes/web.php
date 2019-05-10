@@ -15,37 +15,42 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-//pegawai
-Route::get('addpegawai','PegawaiController@addpegawai', function() {
-})->name('addpegawai');
-
-Route::post('/storepegawai','PegawaiController@storepegawai');
-
-Route::get('/editpegawai/{id}','PegawaiController@editpegawai', function(){
-})->name('editpegawai');
-
-
-Route::post('/updatepegawai/{id}','PegawaiController@updatepegawai');
-
-Route::get('/deletepegawai/{id}','PegawaiController@deletepegawai');
-
+//-- CRUD PEGAWAI --
+//show data
 Route::get('tabelpegawai','pegawaiController@tabelpegawai', function() {
 	return view('simpeg.tabelpegawai');
 })->name('tabelpegawai');
+//create data
+Route::get('addpegawai','PegawaiController@addpegawai', function() {
+})->name('addpegawai');
+Route::post('/storepegawai','PegawaiController@storepegawai');
+//edit data
+Route::get('/editpegawai/{id}','PegawaiController@editpegawai', function(){
+})->name('editpegawai');
+Route::post('/updatepegawai/{id}','PegawaiController@updatepegawai');
+//delete data
+Route::get('/deletepegawai/{id}','PegawaiController@deletepegawai');
 
 
-//keluarga
-Route::get('addkeluarga','keluargaController@addkeluarga', function() {
-	return view('simpeg.addkeluarga');
-})->name('addkeluarga');
 
-Route::post('/storekeluarga','keluargaController@storekeluarga');
-
-Route::get('/deletekeluarga/{id}','keluargaController@deletekeluarga');
-
+//-- CRUD KELUARGA --
+//show data
 Route::get('tabelkeluarga', 'keluargaController@tabelkeluarga', function() {
 	return view('simpeg.tabelkeluarga');
 })->name('tabelkeluarga');
+//create data
+Route::get('addkeluarga','keluargaController@addkeluarga', function() {
+	return view('simpeg.addkeluarga');
+})->name('addkeluarga');
+Route::post('/storekeluarga','keluargaController@storekeluarga');
+//edit data
+Route::get('/editkeluarga/{id}','keluargaController@editkeluarga', function(){
+})->name('editkeluarga');
+Route::post('/updatekeluarga/{id}','keluargaController@updatekeluarga');
+//delete data
+Route::get('/deletekeluarga/{id}','keluargaController@deletekeluarga');
+
+
 
 
 
