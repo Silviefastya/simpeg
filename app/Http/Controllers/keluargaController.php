@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\keluarga;
+use App\pegawai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,19 +12,24 @@ class keluargaController extends Controller
     public function tabelkeluarga()
     {
     	// mengambil data dari table keluarga
-    	$keluarga = DB::table('keluarga')->get();
+		$keluarga = keluarga::with(['get_pegawai'])->get();
  
     	// mengirim data keluar ke view tabelkeluarga
-    	return view('simpeg.tabelkeluarga',['keluarga' => $keluarga]);
+		return view('simpeg.tabelkeluarga',['keluarga' => $keluarga]);
+		
+		return view('simpeg.tabelkeluarga', compact('keluarga'));
  
 	}
 
 
 	public function addkeluarga()
     {
+
+	//ben muncul relasi dropdown
+	$data = pegawai::all();
 	
 	// memanggil view add
-	return view('simpeg.addkeluarga');
+	return view('simpeg.addkeluarga' , compact('data'));
 
 	}
 	
@@ -45,13 +52,23 @@ class keluargaController extends Controller
 	}
 
 
+
+	public function show($id)
+    {
+        $data = pegawai::all();
+        return view ('simpeg.tabelpegawai');
+    }
+
+
 	// method untuk edit data keluarga
 	public function editkeluarga($id)
 	{		
+	
+	$merubah = pegawai::all();
 	// mengambil data keluarga berdasarkan id yang dipilih
 	$keluarga = DB::table('keluarga')->where('id',$id)->get();
 	// passing data keluarga yang didapat ke view edit.blade.php
-	return view('simpeg.editkeluarga',['keluarga' => $keluarga]);
+	return view('simpeg.editkeluarga', compact('merubah','keluarga'));
 	}
 
 	// update data keluarga

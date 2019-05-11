@@ -16,6 +16,7 @@ class CreatePegawaiTable extends Migration
         Schema::create('pegawai', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('nip');
+            $table->string('jabatan_id')->onDelete('cascade');
             $table->string('nama_pegawai');
             $table->date('ttl');
             $table->string('jenis_kelamin');

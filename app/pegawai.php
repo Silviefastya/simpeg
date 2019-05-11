@@ -8,14 +8,10 @@ class pegawai extends Model
 {
     protected $table = "pegawai";
     protected $primaryKey = 'id';
- 
-    public function keluarga()
-    {
-    	return $this->hasOne('App\keluarga');
-    }
 
-    public function riwayat_pendidikan()
+    public function get_jabatan()
     {
-    	return $this->hasOne('App\riwayat_pendidikan');
+    	return $this->belongsTo(jabatan::class, 'jabatan_id','id');
     }
+ 
 }

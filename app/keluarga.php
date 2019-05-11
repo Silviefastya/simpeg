@@ -9,9 +9,9 @@ class keluarga extends Model
     protected $table = "keluarga";
     protected $primaryKey = 'id';
 
- 
-    public function pegawai()
+    public function get_pegawai()
     {
-        return $this->belongsTo('App\pegawai');
+    	return $this->belongsTo(pegawai::class, 'pegawai_id','id');
     }
+    
 }

@@ -15,7 +15,6 @@ class CreateGajiTable extends Migration
     {
         Schema::create('gaji', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('pegawai_id');
             $table->string('gaji_pokok');
             $table->string('tunjangan');
             $table->string('bonus');

@@ -52,6 +52,7 @@
                                                 <th data-field="state" data-checkbox="true"></th>
                                                 <th data-field="id">ID</th>
                                                 <th data-field="nip">NIP</th>
+                                                <th data-field="jabatan_id">Jabatan</th>
                                                 <th data-field="nama_pegawai">Nama</th>
                                                 <th data-field="ttl">ttl</th>
                                                 <th data-field="jenis_kelamin">Jenis Kelamin</th>
@@ -66,6 +67,7 @@
                                                 <td></td>
                                                 <td>{{ $p->id }}</td>
                                                 <td>{{ $p->nip }}</td>
+                                                <td>{{ $p->jabatan_id }}</td>
 			                                    <td>{{ $p->nama_pegawai }}</td>
 			                                    <td>{{ $p->ttl }}</td>
 			                                    <td>{{ $p->jenis_kelamin }}</td>

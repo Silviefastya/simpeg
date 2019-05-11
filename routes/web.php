@@ -52,20 +52,23 @@ Route::get('/deletekeluarga/{id}','keluargaController@deletekeluarga');
 
 
 
-
-
-//riwayat_pendidikan
-Route::get('addriwayat', function() {
-	return view('simpeg.addriwayat');
-})->name('addriwayat');
-
-Route::post('/storeriwayat','riwayatController@storeriwayat');
-
-Route::get('/deleteriwayat/{id}','riwayatController@deleteriwayat');
-
+//-- CRUD RIWAYAT PENDIDIKAN --
+//show data
 Route::get('tabelriwayat','riwayatController@tabelriwayat', function() {
 	return view('simpeg.tabelriwayat');
 })->name('tabelriwayat');
+//create data
+Route::get('addriwayat', function() {
+	return view('simpeg.addriwayat');
+})->name('addriwayat');
+Route::post('/storeriwayat','riwayatController@storeriwayat');
+//edit data
+Route::get('/editriwayat/{id}','riwayatController@editriwayat', function(){
+})->name('editkeluarga');
+Route::post('/updateriwayat/{id}','riwayatController@updateriwayat');
+//delete data
+Route::get('/deleteriwayat/{id}','riwayatController@deleteriwayat');
+
 
 
 //sk

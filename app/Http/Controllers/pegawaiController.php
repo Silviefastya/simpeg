@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\pegawai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -31,6 +32,7 @@ class pegawaiController extends Controller
 	// insert data ke table pegawai
 	DB::table('pegawai')->insert([
 		'id' => $request->id,
+		'jabatan_id' => $request->jabatan_id,
 		'nip' => $request->nip,
 		'nama_pegawai' => $request->nama_pegawai,
 		'ttl' => $request->ttl,
@@ -60,6 +62,7 @@ class pegawaiController extends Controller
 	// update data pegawai
 	DB::table('pegawai')->where('id',$request->id)->update([
 		'id' => $request->id,
+		'jabatan_id' => $request->jabatan_id,
 		'nip' => $request->nip,
 		'nama_pegawai' => $request->nama_pegawai,
 		'ttl' => $request->ttl,

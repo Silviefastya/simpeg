@@ -109,13 +109,6 @@
                                 <li><a title="Data Table" href="{{route('tabelriwayat')}}"><span class="mini-sub-pro">Lihat Data </span></a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Gaji Pegawai</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Data Table" href="{{route('addsk')}}"><span class="mini-sub-pro">Tambah Data</span></a></li>
-                                <li><a title="Data Table" href="{{route('tabelsk')}}"><span class="mini-sub-pro">Lihat Data </span></a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </nav>
             </div>

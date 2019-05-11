@@ -15,7 +15,7 @@ class CreateRiwayatPendidikanTable extends Migration
     {
         Schema::create('riwayat_pendidikan', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('pegawai_id');
+            $table->string('pegawai_id')->onDelete('cascade');
             $table->string('jenjang');
             $table->string('jurusan');
             $table->string('nama_sekolah');

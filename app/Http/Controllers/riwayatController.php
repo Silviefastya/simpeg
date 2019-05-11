@@ -39,9 +39,37 @@ class riwayatController extends Controller
 		'tahun_masuk' => $request->tahun_masuk,
 		'tahun_lulus' => $request->tahun_lulus,
 	]);
-	// alihkan halaman ke halaman pegawai
+	// alihkan halaman ke halaman tabelriwayat
 	return redirect('tabelriwayat');
 
+	}
+
+
+	// method untuk edit data riwayat
+	public function editriwayat($id)
+	{		
+	// mengambil data riwayat berdasarkan id yang dipilih
+	$pegawai = DB::table('riwayat')->where('id',$id)->get();
+	// passing data riwayat yang didapat ke view edit.blade.php
+	return view('simpeg.editriwayat',['riwayat' => $riwayat]);
+	}
+
+	// update data riwayat
+	public function updateriwayat(Request $request)
+	{
+	// update data riwayat
+	DB::table('riwayat')->where('id',$request->id)->update([
+		'id' => $request->id,
+		'pegawai_id' => $request->pegawai_id,
+		'jenjang' => $request->jenjang,
+		'jurusan' => $request->jurusan,
+		'nama_sekolah' => $request->nama_sekolah,
+		'pegawai_id' => $request->pegawai_id,
+		'tahun_masuk' => $request->tahun_masuk,
+		'tahun_lulus' => $request->tahun_lulus,
+	]);
+	// alihkan halaman ke halaman pegawai
+	return redirect('tabelriwayat');
 	}
 
 	public function deleteriwayat($id)

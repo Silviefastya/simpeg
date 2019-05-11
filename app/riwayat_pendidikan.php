@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class riwayat_pendidikan extends Model
 {
-    public function pegawai()
+    protected $table = "riwayat_pendidikan";
+    protected $primaryKey = 'id';
+
+    public function get_pegawai()
     {
-        return $this->belongsTo('App\pegawai');
+    	return $this->belongsTo(pegawai::class, 'pegawai_id','id');
     }
 }

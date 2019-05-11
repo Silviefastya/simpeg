@@ -15,7 +15,7 @@ class CreateKeluargaTable extends Migration
     {
         Schema::create('keluarga', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('pegawai_id')->onDelete('cascade');
+            $table->string('pegawai_id')->onDelete('cascade');
             $table->string('status_nikah');
             $table->string('nama_pasangan');
             $table->date('ttl_pasangan');
