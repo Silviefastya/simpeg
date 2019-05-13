@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\jabatan;
 use App\pegawai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,18 +12,19 @@ class pegawaiController extends Controller
     public function tabelpegawai()
     {
     	// mengambil data dari table pegawai
-    	$pegawai = DB::table('pegawai')->get();
+		$pegawai = pegawai::with(['get_jabatan'])->get();
  
     	// mengirim data pegawai ke view index
-    	return view('simpeg.tabelpegawai',['pegawai' => $pegawai]);
- 
+		return view('simpeg.tabelpegawai', compact('pegawai'));
 	}
 	
 	public function addpegawai()
     {
-    	
+	//ben muncul relasi dropdown
+	$data = jabatan::all();
+		
 	// memanggil view add
-	return view('simpeg.addpegawai');
+	return view('simpeg.addpegawai', compact('data'));
 
 	}
 	
@@ -32,8 +34,8 @@ class pegawaiController extends Controller
 	// insert data ke table pegawai
 	DB::table('pegawai')->insert([
 		'id' => $request->id,
-		'jabatan_id' => $request->jabatan_id,
 		'nip' => $request->nip,
+		'jabatan_id' => $request->jabatan_id,
 		'nama_pegawai' => $request->nama_pegawai,
 		'ttl' => $request->ttl,
 		'jenis_kelamin' => $request->jenis_kelamin,
@@ -46,14 +48,21 @@ class pegawaiController extends Controller
 
 	}
 
+	public function show($id)
+    {
+        $data = jabatan::all();
+        return view ('simpeg.tabelpegawai');
+    }
+
 
 	// method untuk edit data pegawai
 	public function editpegawai($id)
 	{		
+	$merubah = jabatan::all();
 	// mengambil data pegawai berdasarkan id yang dipilih
 	$pegawai = DB::table('pegawai')->where('id',$id)->get();
 	// passing data pegawai yang didapat ke view edit.blade.php
-	return view('simpeg.editpegawai',['pegawai' => $pegawai]);
+	return view('simpeg.editpegawai', compact('merubah','pegawai'));
 	}
 
 	// update data pegawai
@@ -62,8 +71,8 @@ class pegawaiController extends Controller
 	// update data pegawai
 	DB::table('pegawai')->where('id',$request->id)->update([
 		'id' => $request->id,
-		'jabatan_id' => $request->jabatan_id,
 		'nip' => $request->nip,
+		'jabatan_id' => $request->jabatan_id,
 		'nama_pegawai' => $request->nama_pegawai,
 		'ttl' => $request->ttl,
 		'jenis_kelamin' => $request->jenis_kelamin,

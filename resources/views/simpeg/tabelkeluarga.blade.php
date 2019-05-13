@@ -51,26 +51,26 @@
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
                                                 <th data-field="id">ID</th>
-                                                <th data-field="pegawai_id">ID Pegawai</th>
-                                                <th data-field="status_nikah">Status Nikah</th>
-                                                <th data-field="nama_pasangan">Nama Pasangan</th>
+                                                <th data-field="pegawai_id">ID PEGAWAI</th>
+                                                <th data-field="status_nikah">STATUS NIKAH</th>
+                                                <th data-field="nama_pasangan">NAMA PASANGAN</th>
                                                 <th data-field="ttl_pasangan">TTL</th>
-                                                <th data-field="jml_anak">Jumlah Anak</th>
-                                                <th data-field="action">Action</th>
+                                                <th data-field="jml_anak">JUMLAH ANAK</th>
+                                                <th data-field="action">ACTION</th>
                                             </tr>
                                         </thead>
-                                            @foreach($keluarga as $k)
+                                            @foreach($keluarga as $data)
                                             <tr>
                                                 <td></td>
-                                                <td>{{ $k->id }}</td>
-                                                <td>{{ $k->pegawai_id }}</td>
-			                                    <td>{{ $k->status_nikah }}</td>
-			                                    <td>{{ $k->nama_pasangan }}</td>
-			                                    <td>{{ $k->ttl_pasangan }}</td>
-			                                    <td>{{ $k->jml_anak }}</td>
+                                                <td>{{ $data->id }}</td>
+                                                <td>{{ $data->pegawai_id }}</td>
+			                                    <td>{{ $data->status_nikah }}</td>
+			                                    <td>{{ $data->nama_pasangan }}</td>
+			                                    <td>{{ $data->ttl_pasangan }}</td>
+			                                    <td>{{ $data->jml_anak }}</td>
 			                                    <td>
-                                                <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a href="/editkeluarga/{{ $k->id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></a></i></button>
-                                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><a href="/deletekeluarga/{{ $k->id }}"><i class="fa fa-trash-o" aria-hidden="true"></a></i></button>
+                                                <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a href="/editkeluarga/{{ $data->id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></a></i></button>
+                                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><a href="/deletekeluarga/{{ $data->id }}"><i class="fa fa-trash-o" aria-hidden="true"></a></i></button>
 			                                    </td>
 		                                    </tr>
 		                                    @endforeach

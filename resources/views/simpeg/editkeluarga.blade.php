@@ -57,14 +57,18 @@
                                                                 <label class="login2 pull-right pull-right-pro">NAMA PEGAWAI</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="pegawai_id" required="required" value="{{ $k->pegawai_id }}" class="form-control" />
+                                                            <select name="pegawai_id" class="form-control">
+                                                            @foreach ($merubah as $m)
+                                                            <option value="{{$m->id}}">{{ $m->nama_pegawai}}</option>
+                                                            @endforeach
+                                                            </select>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Status Nikah</label>
+                                                                <label class="login2 pull-right pull-right-pro">STATUS NIKAH</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                 <input type="text" name="status_nikah" required="required" value="{{ $k->status_nikah }}" class="form-control" />
@@ -94,7 +98,7 @@
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Jumlah Anak</label>
+                                                                <label class="login2 pull-right pull-right-pro">JUMLAH ANAK</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                 <input type="text" name="jml_anak" required="required" value="{{ $k->jml_anak }}"class="form-control" />

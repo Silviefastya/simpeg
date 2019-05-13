@@ -52,14 +52,14 @@
                                                 <th data-field="state" data-checkbox="true"></th>
                                                 <th data-field="id">ID</th>
                                                 <th data-field="nip">NIP</th>
-                                                <th data-field="jabatan_id">Jabatan</th>
-                                                <th data-field="nama_pegawai">Nama</th>
-                                                <th data-field="ttl">ttl</th>
-                                                <th data-field="jenis_kelamin">Jenis Kelamin</th>
-                                                <th data-field="agama">Agama</th>
-                                                <th data-field="alamat">Alamat</th>
-                                                <th data-field="no_telepon">No telepon</th>
-                                                <th data-field="action">Action</th>
+                                                <th data-field="jabatan_id">JABATAN</th>
+                                                <th data-field="nama_pegawai">NAMA</th>
+                                                <th data-field="ttl">TEMPAT, TANGGAL LAHIR</th>
+                                                <th data-field="jenis_kelamin">JENIS KELAMIN</th>
+                                                <th data-field="agama">AGAMA</th>
+                                                <th data-field="alamat">ALAMAT</th>
+                                                <th data-field="no_telepon">NO TELEPON</th>
+                                                <th data-field="action">ACTION</th>
                                             </tr>
                                         </thead>
                                             @foreach($pegawai as $p)

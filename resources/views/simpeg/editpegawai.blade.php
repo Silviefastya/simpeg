@@ -54,16 +54,6 @@
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">JABATAN</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="jabatan_id" required="required" value="{{ $p->jabatan_id }}" class="form-control" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                                 <label class="login2 pull-right pull-right-pro">NIP</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
@@ -77,7 +67,11 @@
                                                                 <label class="login2 pull-right pull-right-pro">JABATAN</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="jabatan_id" required="required" value="{{ $p->jabatan_id }}" class="form-control" />
+                                                            <select name="jabatan_id" class="form-control">
+                                                            @foreach ($merubah as $m)
+                                                            <option value="{{$m->id}}">{{ $m->nama_jabatan}}</option>
+                                                            @endforeach
+                                                            </select>
                                                             </div>
                                                         </div>
                                                     </div>

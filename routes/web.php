@@ -58,13 +58,13 @@ Route::get('tabelriwayat','riwayatController@tabelriwayat', function() {
 	return view('simpeg.tabelriwayat');
 })->name('tabelriwayat');
 //create data
-Route::get('addriwayat', function() {
+Route::get('addriwayat', 'riwayatController@addriwayat', function() {
 	return view('simpeg.addriwayat');
 })->name('addriwayat');
 Route::post('/storeriwayat','riwayatController@storeriwayat');
 //edit data
 Route::get('/editriwayat/{id}','riwayatController@editriwayat', function(){
-})->name('editkeluarga');
+})->name('editriwayat');
 Route::post('/updateriwayat/{id}','riwayatController@updateriwayat');
 //delete data
 Route::get('/deleteriwayat/{id}','riwayatController@deleteriwayat');

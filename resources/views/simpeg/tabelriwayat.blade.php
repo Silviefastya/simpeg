@@ -51,20 +51,20 @@
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
                                                 <th data-field="id">ID</th>
-                                                <th data-field="pegawai_id" >ID pegawai</th>
-                                                <th data-field="jenjang" >Jenjang</th>
-                                                <th data-field="jurusan" >Jurusan</th>
-                                                <th data-field="nama_sekolah" >Nama Sekolah</th>
-                                                <th data-field="tahun_masuk">Tahun Masuk</th>
-                                                <th data-field="tahun_lulus" >Tahun Lulus</th>
-                                                <th data-field="action">Action</th>
+                                                <th data-field="pegawai_id" >NAMA PEGAWAI</th>
+                                                <th data-field="jenjang" >JENJANG</th>
+                                                <th data-field="jurusan" >JURUSAN</th>
+                                                <th data-field="nama_sekolah" >NAMA SEKOLAH</th>
+                                                <th data-field="tahun_masuk">TAHUN MASUK</th>
+                                                <th data-field="tahun_lulus" >TAHUN LULUS</th>
+                                                <th data-field="action">ACTION</th>
                                             </tr>
                                         </thead>
                                             @foreach($riwayat_pendidikan as $rp)
                                             <tr>
                                                 <td></td>
                                                 <td>{{ $rp->id }}</td>
-                                                <td>{{ $rp->pegawai_id }}</td>
+                                                <td>{{ $rp ->get_pegawai->nama_pegawai }}</td>
 			                                    <td>{{ $rp->jenjang }}</td>
 			                                    <td>{{ $rp->jurusan }}</td>
 			                                    <td>{{ $rp->nama_sekolah }}</td>

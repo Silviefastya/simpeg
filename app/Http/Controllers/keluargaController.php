@@ -15,8 +15,6 @@ class keluargaController extends Controller
 		$keluarga = keluarga::with(['get_pegawai'])->get();
  
     	// mengirim data keluar ke view tabelkeluarga
-		return view('simpeg.tabelkeluarga',['keluarga' => $keluarga]);
-		
 		return view('simpeg.tabelkeluarga', compact('keluarga'));
  
 	}

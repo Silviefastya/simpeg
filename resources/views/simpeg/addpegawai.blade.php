@@ -64,14 +64,18 @@
                                                                 <label class="login2 pull-right pull-right-pro">JABATAN</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="jabatan_id" required="required" class="form-control" />
+                                                            <select name="jabatan_id" class="form-control">
+                                                            @foreach ($data as $data)
+                                                            <option value="{{$data->id}}">{{ $data->nama_jabatan}}</option>
+                                                            @endforeach
+                                                            </select>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Nama</label>
+                                                                <label class="login2 pull-right pull-right-pro">NAMA LENGKAP</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                 <input type="text" name="nama_pegawai" required="required" class="form-control" />
@@ -81,7 +85,7 @@
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Tempat, Tanggal Lahir</label>
+                                                                <label class="login2 pull-right pull-right-pro">TEMPAT, TANGGAL LAHIR</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                 <input type="text" name="ttl" required="required" class="form-control" />
@@ -91,7 +95,7 @@
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Jenis Kelamin</label>
+                                                                <label class="login2 pull-right pull-right-pro">JENIS KELAMIN</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                 <input type="text" name="jenis_kelamin" required="required" class="form-control" />
@@ -101,7 +105,7 @@
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Agama</label>
+                                                                <label class="login2 pull-right pull-right-pro">AGAMA</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                 <input type="text" name="agama" required="required" class="form-control" />
@@ -111,7 +115,7 @@
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Alamat</label>
+                                                                <label class="login2 pull-right pull-right-pro">ALAMAT</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                 <input type="text" name="alamat" required="required" class="form-control" placeholder="Placeholder" />
@@ -122,7 +126,7 @@
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">No Telepon</label>
+                                                                <label class="login2 pull-right pull-right-pro">NO TELEPON</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                 <input type="text" name="no_telepon" required="required" class="form-control" placeholder="*wajib diisi" />

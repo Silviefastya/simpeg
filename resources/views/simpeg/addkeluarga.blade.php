@@ -65,7 +65,7 @@
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Status Nikah</label>
+                                                                <label class="login2 pull-right pull-right-pro">STATUS NIKAH</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                 <input type="text" name="status_nikah" required="required" class="form-control" />
@@ -75,7 +75,7 @@
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Nama Pasangan</label>
+                                                                <label class="login2 pull-right pull-right-pro">NAMA PASANGAN</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                 <input type="text" name="nama_pasangan" required="required" class="form-control" />
@@ -95,7 +95,7 @@
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Jumlah Anak</label>
+                                                                <label class="login2 pull-right pull-right-pro">JUMLAH ANAK</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                 <input type="text" name="jml_anak" required="required" class="form-control" />

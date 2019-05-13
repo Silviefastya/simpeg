@@ -25,7 +25,7 @@
             <div class="container-fluid">
                 
         <!-- Basic Form End-->                
-    @foreach($pegawai as $p)
+    @foreach($riwayat_pendidikan as $r)
     <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="sparkline12-list">
@@ -39,7 +39,7 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="all-form-element-inner">
-                                                <form action="/updatepegawai/{{ $p->id }}" method="post">
+                                                <form action="/updateriwayat/{{ $r->id }}" method="post">
                                                 {{ csrf_field() }}
                                                     <div class="form-group-inner">
                                                         <div class="row">
@@ -47,82 +47,75 @@
                                                                 <label class="login2 pull-right pull-right-pro">ID</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="id" required="required" value="{{ $p->id }}" class="form-control" />
+                                                                <input type="text" name="id" required="required" value="{{ $r->id }}" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">NIP</label>
+                                                                <label class="login2 pull-right pull-right-pro">NAMA PEGAWAI</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="nip" required="required" value="{{ $p->nip }}" class="form-control" />
+                                                            <select name="pegawai_id" class="form-control">
+                                                            @foreach ($merubah as $m)
+                                                            <option value="{{$m->id}}">{{ $m->nama_pegawai}}</option>
+                                                            @endforeach
+                                                            </select>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Nama</label>
+                                                                <label class="login2 pull-right pull-right-pro">JENJANG</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="nama_pegawai" required="required" value="{{ $p->nama_pegawai }}" class="form-control" />
+                                                                <input type="text" name="jenjang" required="required" value="{{ $r->jenjang }}" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Tempat, Tanggal Lahir</label>
+                                                                <label class="login2 pull-right pull-right-pro">JURUSAN</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="ttl" required="required" value="{{ $p->ttl }}" class="form-control" />
+                                                                <input type="text" name="jurusan" required="required" value="{{ $r->jurusan }}" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Jenis Kelamin</label>
+                                                                <label class="login2 pull-right pull-right-pro">NAMA SEKOLAH</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="jenis_kelamin" required="required" value="{{ $p->jenis_kelamin }}" class="form-control" />
+                                                                <input type="text" name="nama_sekolah" required="required" value="{{ $r->nama_sekolah }}" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Agama</label>
+                                                                <label class="login2 pull-right pull-right-pro">TAHUN MASUK</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="agama" required="required" value="{{ $p->agama }}"class="form-control" />
+                                                                <input type="text" name="tahun_masuk" required="required" value="{{ $r->tahun_masuk }}"class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Alamat</label>
+                                                                <label class="login2 pull-right pull-right-pro">TAHUN LULUS</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="alamat" required="required" value="{{ $p->alamat }}" class="form-control" placeholder="Placeholder" />
+                                                                <input type="text" name="tahun_lulus" required="required" value="{{ $r->tahun_lulus }}" class="form-control" placeholder="Placeholder" />
                                                             </div>
                                                         </div>
                                                     </div>
 
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">No Telepon</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="no_telepon" required="required" value="{{ $p->no_telepon }}"class="form-control" placeholder="*wajib diisi" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    
                                                     
                                                     <div class="form-group-inner">
                                                         <div class="login-btn-inner">

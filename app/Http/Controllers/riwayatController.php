@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\riwayat_pendidikan;
+use App\pegawai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,18 +12,20 @@ class riwayatController extends Controller
     public function tabelriwayat()
     {
     	// mengambil data dari table riwayat
-    	$riwayat_pendidikan = DB::table('riwayat_pendidikan')->get();
- 
+		$riwayat_pendidikan = riwayat_pendidikan::with(['get_pegawai'])->get();
     	// mengirim data riwayat ke view tbl riwayat
-    	return view('simpeg.tabelriwayat',['riwayat_pendidikan' => $riwayat_pendidikan]);
- 
+		return view('simpeg.tabelriwayat', compact('riwayat_pendidikan'));
+
 	}
 	
 	public function addriwayat()
     {
-    	
+		
+	//ben muncul relasi dropdown
+	$data = pegawai::all();
+
 	// memanggil view add
-	return view('simpeg.addriwayat');
+	return view('simpeg.addriwayat' , compact('data'));
 
 	}
 	
@@ -35,7 +39,6 @@ class riwayatController extends Controller
 		'jenjang' => $request->jenjang,
 		'jurusan' => $request->jurusan,
 		'nama_sekolah' => $request->nama_sekolah,
-		'pegawai_id' => $request->pegawai_id,
 		'tahun_masuk' => $request->tahun_masuk,
 		'tahun_lulus' => $request->tahun_lulus,
 	]);
@@ -44,27 +47,33 @@ class riwayatController extends Controller
 
 	}
 
+	public function show($id)
+    {
+        $data = pegawai::all();
+        return view ('simpeg.tabelpegawai');
+    }
+
 
 	// method untuk edit data riwayat
 	public function editriwayat($id)
 	{		
+	$merubah = pegawai::all();
 	// mengambil data riwayat berdasarkan id yang dipilih
-	$pegawai = DB::table('riwayat')->where('id',$id)->get();
+	$riwayat_pendidikan = DB::table('riwayat_pendidikan')->where('id',$id)->get();
 	// passing data riwayat yang didapat ke view edit.blade.php
-	return view('simpeg.editriwayat',['riwayat' => $riwayat]);
+	return view('simpeg.editriwayat', compact('merubah','riwayat_pendidikan'));
 	}
 
 	// update data riwayat
 	public function updateriwayat(Request $request)
 	{
 	// update data riwayat
-	DB::table('riwayat')->where('id',$request->id)->update([
+	DB::table('riwayat_pendidikan')->where('id',$request->id)->update([
 		'id' => $request->id,
 		'pegawai_id' => $request->pegawai_id,
 		'jenjang' => $request->jenjang,
 		'jurusan' => $request->jurusan,
 		'nama_sekolah' => $request->nama_sekolah,
-		'pegawai_id' => $request->pegawai_id,
 		'tahun_masuk' => $request->tahun_masuk,
 		'tahun_lulus' => $request->tahun_lulus,
 	]);

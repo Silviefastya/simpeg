@@ -52,10 +52,14 @@
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">ID PEGAWAI</label>
+                                                                <label class="login2 pull-right pull-right-pro">NAMA PEGAWAI</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="pegawai_id" required="required" class="form-control" />
+                                                            <select name="pegawai_id" class="form-control">
+                                                            @foreach ($data as $data)
+                                                            <option value="{{$data->id}}">{{ $data->nama_pegawai}}</option>
+                                                            @endforeach
+                                                            </select>
                                                             </div>
                                                         </div>
                                                     </div>
