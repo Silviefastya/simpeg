@@ -207,43 +207,43 @@
                                 <div class="text-center content-bg-pro">
                                     <h3>DATA PEGAWAI</h3>
                                     <p class="text-big font-light">
-                                        20
+                                   {{$count}}
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="hpanel shadow-inner hbgblue bg-2 responsive-mg-b-30">
+                        <div class="hpanel shadow-inner hbggreen bg-1 responsive-mg-b-30">
                             <div class="panel-body">
                                 <div class="text-center content-bg-pro">
                                     <h3>DATA KELUARGA</h3>
                                     <p class="text-big font-light">
-                                        160
+                                    {{$keluarga}}
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="hpanel shadow-inner hbgyellow bg-3 responsive-mg-b-30 res-tablet-mg-t-30 dk-res-t-pro-30">
+                        <div class="hpanel shadow-inner hbggreen bg-1 responsive-mg-b-30">
                             <div class="panel-body">
                                 <div class="text-center content-bg-pro">
                                     <h3>RIWAYAT PENDIDIKAN</h3>
                                     <p class="text-big font-light">
-                                        750
+                                    {{$riwayat_pendidikan}}
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="hpanel shadow-inner hbgred bg-4 res-tablet-mg-t-30 dk-res-t-pro-30">
+                        <div class="hpanel shadow-inner hbggreen bg-1 responsive-mg-b-30">
                             <div class="panel-body">
                                 <div class="text-center content-bg-pro">
                                     <h3>DATA GAJI PEGAWAI</h3>
                                     <p class="text-big font-light">
-                                        0,43
+                                    {{$gaji}}
                                     </p>
                                 </div>
                             </div>
@@ -259,15 +259,9 @@
                         <div class="hpanel widget-int-shape responsive-mg-b-30">
                             <div class="panel-body">
                                 <div class="text-center content-box">
-                                    <h2 class="m-b-xs">PEGAWAI</h2>
-                                    <p class="font-bold text-success">Lorem ipsum</p>
                                     <div class="m icon-box">
-                                        <i class="educate-icon educate-star-half"></i>
                                     </div>
-                                    <p class="small mg-t-box">
-                                        Lorem Ipsum passages and more recently with the desktop published software like Aldus PageMaker.
-                                    </p>
-                                    <button class="btn btn-success widget-btn-1 btn-sm">Action button</button>
+                                    <a class="btn btn-success widget-btn-1 btn-sm" href="{{url('/addpegawai')}}">TAMBAH DATA</a>
                                 </div>
                             </div>
                         </div>
@@ -276,15 +270,9 @@
                         <div class="hpanel widget-int-shape responsive-mg-b-30">
                             <div class="panel-body">
                                 <div class="text-center content-box">
-                                    <h2 class="m-b-xs">KELUARGA</h2>
-                                    <p class="font-bold text-info">Lorem ipsum</p>
                                     <div class="m icon-box">
-                                        <i class="educate-icon educate-miscellanous"></i>
                                     </div>
-                                    <p class="small mg-t-box">
-                                        Lorem Ipsum passages and more recently with the desktop published software like Aldus PageMaker.
-                                    </p>
-                                    <button class="btn btn-success widget-btn-1 btn-sm">Action button</button>
+                                    <a class="btn btn-success widget-btn-1 btn-sm" href="{{url('/addkeluarga')}}">TAMBAH DATA</a>
                                 </div>
                             </div>
                         </div>
@@ -293,15 +281,9 @@
                         <div class="hpanel widget-int-shape responsive-mg-b-30 res-tablet-mg-t-30 dk-res-t-pro-30">
                             <div class="panel-body">
                                 <div class="text-center content-box">
-                                    <h2 class="m-b-xs">RIWAYAT PENDIDIKAN</h2>
-                                    <p class="font-bold text-warning">Lorem ipsum</p>
                                     <div class="m icon-box">
-                                        <i class="educate-icon educate-interface"></i>
                                     </div>
-                                    <p class="small mg-t-box">
-                                        Lorem Ipsum passages and more recently with the desktop published software like Aldus PageMaker.
-                                    </p>
-                                    <button class="btn btn-success widget-btn-1 btn-sm">Action button</button>
+                                    <a class="btn btn-success widget-btn-1 btn-sm" href="{{url('/addriwayat')}}">TAMBAH DATA</a>
                                 </div>
                             </div>
                         </div>
@@ -310,15 +292,9 @@
                         <div class="hpanel widget-int-shape res-tablet-mg-t-30 dk-res-t-pro-30">
                             <div class="panel-body">
                                 <div class="text-center content-box">
-                                    <h2 class="m-b-xs">GAJI</h2>
-                                    <p class="font-bold text-danger">Lorem ipsum</p>
                                     <div class="m icon-box">
-                                        <i class="educate-icon educate-charts"></i>
                                     </div>
-                                    <p class="small mg-t-box">
-                                        Lorem Ipsum passages and more recently with the desktop published software like Aldus PageMaker.
-                                    </p>
-                                    <button class="btn btn-success widget-btn-1 btn-sm">Action button</button>
+                                    <a class="btn btn-success widget-btn-1 btn-sm" href="{{url('/add')}}">TAMBAH DATA</a>
                                 </div>
                             </div>
                         </div>
@@ -326,6 +302,18 @@
                 </div>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
