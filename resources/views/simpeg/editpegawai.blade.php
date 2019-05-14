@@ -47,7 +47,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">ID</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="id" required="required" value="{{ $p->id }}" class="form-control" />
+                                                                <input type="text" disabled name="id" required="required" value="{{ $p->id }}" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>

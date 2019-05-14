@@ -33,7 +33,7 @@
                         <div class="sparkline13-list">
                             <div class="sparkline13-hd">
                                 <div class="main-sparkline13-hd">
-                                    <h1>Data <span class="table-project-n"></span> Keluarga</h1>
+                                    <h1>DATA <span class="table-project-n"></span> KELUARGA</h1>
                                 </div>
                             </div>
                             <div class="sparkline13-graph">
@@ -51,7 +51,7 @@
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
                                                 <th data-field="id">ID</th>
-                                                <th data-field="pegawai_id">ID PEGAWAI</th>
+                                                <th data-field="pegawai_id">NAMA PEGAWAI</th>
                                                 <th data-field="status_nikah">STATUS NIKAH</th>
                                                 <th data-field="nama_pasangan">NAMA PASANGAN</th>
                                                 <th data-field="ttl_pasangan">TTL</th>
@@ -63,7 +63,7 @@
                                             <tr>
                                                 <td></td>
                                                 <td>{{ $data->id }}</td>
-                                                <td>{{ $data->pegawai_id }}</td>
+                                                <td>{{ $data->get_pegawai->nama_pegawai }}</td>
 			                                    <td>{{ $data->status_nikah }}</td>
 			                                    <td>{{ $data->nama_pasangan }}</td>
 			                                    <td>{{ $data->ttl_pasangan }}</td>

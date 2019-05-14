@@ -33,7 +33,7 @@
                         <div class="sparkline13-list">
                             <div class="sparkline13-hd">
                                 <div class="main-sparkline13-hd">
-                                    <h1>Data <span class="table-project-n"></span> Riwayat Pendidikan</h1>
+                                    <h1>DATA <span class="table-project-n"></span> RIWAYAT PENDIDIKAN</h1>
                                 </div>
                             </div>
                             <div class="sparkline13-graph">

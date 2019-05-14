@@ -86,7 +86,7 @@
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a title="Landing Page" href="{{route('dashboard')}}" aria-expanded="false"><span class="educate-icon educate-home icon-wrap"></span> <span class="mini-click-non">Dashboard</span></a>
+                            <a title="Landing Page" href="{{url('/home')}}" aria-expanded="false"><span class="educate-icon educate-home icon-wrap"></span> <span class="mini-click-non">Dashboard</span></a>
                         </li>
                         <li>
                             <a class="has-arrow" href="#" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Data Pegawai</span></a>
@@ -112,8 +112,8 @@
                         <li>
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Gaji Pegawai</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Data Table" href="{{route('addsk')}}"><span class="mini-sub-pro">Tambah Data</span></a></li>
-                                <li><a title="Data Table" href="{{route('tabelsk')}}"><span class="mini-sub-pro">Lihat Data </span></a></li>
+                                <li><a title="Data Table" href="{{route('addgaji')}}"><span class="mini-sub-pro">Tambah Data</span></a></li>
+                                <li><a title="Data Table" href="{{route('tabelgaji')}}"><span class="mini-sub-pro">Lihat Data </span></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -162,10 +162,6 @@
 															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
 														</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
-                                                        </li>
                                                         <li><a href="#"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
                                                         </li>
                                                     </ul>

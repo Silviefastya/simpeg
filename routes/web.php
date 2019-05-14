@@ -69,17 +69,27 @@ Route::post('/updateriwayat/{id}','riwayatController@updateriwayat');
 //delete data
 Route::get('/deleteriwayat/{id}','riwayatController@deleteriwayat');
 
+//-- CRUD KELUARGA --
+//show data
+Route::get('tabelgaji', 'gajiController@tabelgaji', function() {
+	return view('simpeg.tabelgaji');
+})->name('tabelgaji');
+//create data
+Route::get('addgaji','gajiController@addgaji', function() {
+	return view('simpeg.addgaji');
+})->name('addgaji');
+Route::post('/storegaji','gajiController@storegaji');
+//edit data
+Route::get('/editgaji/{id}','gajiController@editgaji', function(){
+})->name('editgaji');
+Route::post('/updategaji/{id}','gajiController@updategaji');
+//delete data
+Route::get('/deletegaji/{id}','gajiController@deletegaji');
 
 
-//sk
-Route::get('addsk', function() {
-	return view('simpeg.addsk');
-})->name('addsk');
 
-Route::get('tabelsk', function() {
-	return view('simpeg.tabelsk');
-})->name('tabelsk');
 
+//
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -56,20 +56,8 @@
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- x-editor CSS
-		============================================ -->
-        <link rel="stylesheet" href="css/editor/select2.css">
-    <link rel="stylesheet" href="css/editor/datetimepicker.css">
-    <link rel="stylesheet" href="css/editor/bootstrap-editable.css">
-    <link rel="stylesheet" href="css/editor/x-editor-style.css">
-    <!-- normalize CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/data-table/bootstrap-table.css">
-    <link rel="stylesheet" href="css/data-table/bootstrap-editable.css">
-
     <!-- responsive CSS
-        ============================================ -->
+		============================================ -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- modernizr JS
 		============================================ -->
@@ -91,7 +79,7 @@
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a title="Landing Page" href="" aria-expanded="false"><span class="educate-icon educate-home icon-wrap"></span> <span class="mini-click-non">Dashboard</span></a>
+                            <a title="Landing Page" href="{{url('/home')}}" aria-expanded="false"><span class="educate-icon educate-home icon-wrap"></span> <span class="mini-click-non">Dashboard</span></a>
                         </li>
                         <li>
                             <a class="has-arrow" href="#" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Data Pegawai</span></a>
@@ -114,6 +102,13 @@
                                 <li><a title="Data Table" href="{{route('tabelriwayat')}}"><span class="mini-sub-pro">Lihat Data </span></a></li>
                             </ul>
                         </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Gaji Pegawai</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Data Table" href="{{route('addgaji')}}"><span class="mini-sub-pro">Tambah Data</span></a></li>
+                                <li><a title="Data Table" href="{{route('tabelgaji')}}"><span class="mini-sub-pro">Lihat Data </span></a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -121,12 +116,13 @@
     </div>
     <!-- End Left menu area -->
     <!-- Start Welcome area -->
-    <div class="all-content-wrapper">
+     <!-- Start Welcome area -->
+     <div class="all-content-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="{{url('/home')}}"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
                     </div>
                 </div>
             </div>
@@ -148,25 +144,22 @@
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                               
-                                               
+                                                <li class="nav-item dropdown">
+                                                    
+                                                </li>
+                                                
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
 															<span class="admin-name">{{ Auth::user()->name }}</span>
 															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
 														</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
-                                                        </li>
                                                         <li><a href="{{url('/logout')}}"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
                                                         </li>
                                                     </ul>
@@ -181,11 +174,158 @@
                     </div>
                 </div>
             </div>
-            
+          
+            <div class="breadcome-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcome-list single-page-breadcome">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="breadcome-heading">
+                                        @if (session('status'))
+                                        <div class="alert alert-success" role="alert">
+                                        {{ session('status') }}
+                                        </div>
+                                        @endif
+                                        <h3>Hi, {{ Auth::user()->name }}!</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        @yield('content')
-        
+        <div class="widget-program-bg">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="hpanel shadow-inner hbggreen bg-1 responsive-mg-b-30">
+                            <div class="panel-body">
+                                <div class="text-center content-bg-pro">
+                                    <h3>DATA PEGAWAI</h3>
+                                    <p class="text-big font-light">
+                                        20
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="hpanel shadow-inner hbgblue bg-2 responsive-mg-b-30">
+                            <div class="panel-body">
+                                <div class="text-center content-bg-pro">
+                                    <h3>DATA KELUARGA</h3>
+                                    <p class="text-big font-light">
+                                        160
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="hpanel shadow-inner hbgyellow bg-3 responsive-mg-b-30 res-tablet-mg-t-30 dk-res-t-pro-30">
+                            <div class="panel-body">
+                                <div class="text-center content-bg-pro">
+                                    <h3>RIWAYAT PENDIDIKAN</h3>
+                                    <p class="text-big font-light">
+                                        750
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="hpanel shadow-inner hbgred bg-4 res-tablet-mg-t-30 dk-res-t-pro-30">
+                            <div class="panel-body">
+                                <div class="text-center content-bg-pro">
+                                    <h3>DATA GAJI PEGAWAI</h3>
+                                    <p class="text-big font-light">
+                                        0,43
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="widget-program-box mg-tb-30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="hpanel widget-int-shape responsive-mg-b-30">
+                            <div class="panel-body">
+                                <div class="text-center content-box">
+                                    <h2 class="m-b-xs">PEGAWAI</h2>
+                                    <p class="font-bold text-success">Lorem ipsum</p>
+                                    <div class="m icon-box">
+                                        <i class="educate-icon educate-star-half"></i>
+                                    </div>
+                                    <p class="small mg-t-box">
+                                        Lorem Ipsum passages and more recently with the desktop published software like Aldus PageMaker.
+                                    </p>
+                                    <button class="btn btn-success widget-btn-1 btn-sm">Action button</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="hpanel widget-int-shape responsive-mg-b-30">
+                            <div class="panel-body">
+                                <div class="text-center content-box">
+                                    <h2 class="m-b-xs">KELUARGA</h2>
+                                    <p class="font-bold text-info">Lorem ipsum</p>
+                                    <div class="m icon-box">
+                                        <i class="educate-icon educate-miscellanous"></i>
+                                    </div>
+                                    <p class="small mg-t-box">
+                                        Lorem Ipsum passages and more recently with the desktop published software like Aldus PageMaker.
+                                    </p>
+                                    <button class="btn btn-success widget-btn-1 btn-sm">Action button</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="hpanel widget-int-shape responsive-mg-b-30 res-tablet-mg-t-30 dk-res-t-pro-30">
+                            <div class="panel-body">
+                                <div class="text-center content-box">
+                                    <h2 class="m-b-xs">RIWAYAT PENDIDIKAN</h2>
+                                    <p class="font-bold text-warning">Lorem ipsum</p>
+                                    <div class="m icon-box">
+                                        <i class="educate-icon educate-interface"></i>
+                                    </div>
+                                    <p class="small mg-t-box">
+                                        Lorem Ipsum passages and more recently with the desktop published software like Aldus PageMaker.
+                                    </p>
+                                    <button class="btn btn-success widget-btn-1 btn-sm">Action button</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="hpanel widget-int-shape res-tablet-mg-t-30 dk-res-t-pro-30">
+                            <div class="panel-body">
+                                <div class="text-center content-box">
+                                    <h2 class="m-b-xs">GAJI</h2>
+                                    <p class="font-bold text-danger">Lorem ipsum</p>
+                                    <div class="m icon-box">
+                                        <i class="educate-icon educate-charts"></i>
+                                    </div>
+                                    <p class="small mg-t-box">
+                                        Lorem Ipsum passages and more recently with the desktop published software like Aldus PageMaker.
+                                    </p>
+                                    <button class="btn btn-success widget-btn-1 btn-sm">Action button</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
@@ -223,11 +363,6 @@
     <!-- scrollUp JS
 		============================================ -->
     <script src="js/jquery.scrollUp.min.js"></script>
-    <!-- counterup JS
-		============================================ -->
-    <script src="js/counterup/jquery.counterup.min.js"></script>
-    <script src="js/counterup/waypoints.min.js"></script>
-    <script src="js/counterup/counterup-active.js"></script>
     <!-- mCustomScrollbar JS
 		============================================ -->
     <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -238,37 +373,8 @@
     <script src="js/metisMenu/metisMenu-active.js"></script>
     <!-- morrisjs JS
 		============================================ -->
-    <script src="js/morrisjs/raphael-min.js"></script>
-    <script src="js/morrisjs/morris.js"></script>
-    <script src="js/morrisjs/morris-active.js"></script>
-    <!-- data table JS
-		============================================ -->
-        <script src="js/data-table/bootstrap-table.js"></script>
-    <script src="js/data-table/tableExport.js"></script>
-    <script src="js/data-table/data-table-active.js"></script>
-    <script src="js/data-table/bootstrap-table-editable.js"></script>
-    <script src="js/data-table/bootstrap-editable.js"></script>
-    <script src="js/data-table/bootstrap-table-resizable.js"></script>
-    <script src="js/data-table/colResizable-1.5.source.js"></script>
-    <script src="js/data-table/bootstrap-table-export.js"></script>
-    <!--  editable JS
-		============================================ -->
-    <script src="js/editable/jquery.mockjax.js"></script>
-    <script src="js/editable/mock-active.js"></script>
-    <script src="js/editable/select2.js"></script>
-    <script src="js/editable/moment.min.js"></script>
-    <script src="js/editable/bootstrap-datetimepicker.js"></script>
-    <script src="js/editable/bootstrap-editable.js"></script>
-    <script src="js/editable/xediable-active.js"></script>
-    <!-- Chart JS
-        ============================================ -->
-    <script src="js/chart/jquery.peity.min.js"></script>
-    <script src="js/peity/peity-active.js"></script>
-    <!-- morrisjs JS
-		============================================ -->
     <script src="js/sparkline/jquery.sparkline.min.js"></script>
     <script src="js/sparkline/jquery.charts-sparkline.js"></script>
-    <script src="js/sparkline/sparkline-active.js"></script>
     <!-- calendar JS
 		============================================ -->
     <script src="js/calendar/moment.min.js"></script>
@@ -276,14 +382,12 @@
     <script src="js/calendar/fullcalendar-active.js"></script>
     <!-- tab JS
 		============================================ -->
-        <script src="js/tab.js"></script>
+    <script src="js/tab.js"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="js/plugins.js"></script>
     <!-- main JS
 		============================================ -->
     <script src="js/main.js"></script>
-    
 </body>
-
 </html>

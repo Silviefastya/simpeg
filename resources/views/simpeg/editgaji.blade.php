@@ -10,7 +10,7 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="breadcome-heading">
-                                        <h4> EDIT DATA PEGAWAI </h4>
+                                        <h4> EDIT DATA KELUARGA </h4>
                                         </div>
                                     </div>
                                 </div>
@@ -25,7 +25,7 @@
             <div class="container-fluid">
                 
         <!-- Basic Form End-->                
-    @foreach($riwayat_pendidikan as $r)
+    @foreach($gaji as $g)
     <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="sparkline12-list">
@@ -39,7 +39,7 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="all-form-element-inner">
-                                                <form action="/updateriwayat/{{ $r->id }}" method="post">
+                                                <form action="/updategaji/{{ $g->id }}" method="post">
                                                 {{ csrf_field() }}
                                                     <div class="form-group-inner">
                                                         <div class="row">
@@ -47,7 +47,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">ID</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="id" disabled required="required" value="{{ $r->id }}" class="form-control" />
+                                                                <input type="text" disabled name="id" required="required" value="{{ $g->id }}" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -68,55 +68,43 @@
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">JENJANG</label>
+                                                                <label class="login2 pull-right pull-right-pro">GAJI POKOK</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="jenjang" required="required" value="{{ $r->jenjang }}" class="form-control" />
+                                                                <input type="text" name="gaji_pokok" required="required" value="{{ $g->gaji_pokok }}" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">JURUSAN</label>
+                                                                <label class="login2 pull-right pull-right-pro">TUNJANGAN</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="jurusan" required="required" value="{{ $r->jurusan }}" class="form-control" />
+                                                                <input type="text" name="tunjangan" required="required" value="{{ $g->tunjangan }}" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">NAMA SEKOLAH</label>
+                                                                <label class="login2 pull-right pull-right-pro">BONUS</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="nama_sekolah" required="required" value="{{ $r->nama_sekolah }}" class="form-control" />
+                                                                <input type="text" name="bonus" required="required" value="{{ $g->bonus }}" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">TAHUN MASUK</label>
+                                                                <label class="login2 pull-right pull-right-pro">TOTAL GAJI</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="tahun_masuk" required="required" value="{{ $r->tahun_masuk }}"class="form-control" />
+                                                                <input type="text" name="total_gaji" required="required" value="{{ $g->total_gaji }}"class="form-control" />
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">TAHUN LULUS</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="tahun_lulus" required="required" value="{{ $r->tahun_lulus }}" class="form-control" placeholder="Placeholder" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    
+                                                    </div>  
                                                     <div class="form-group-inner">
                                                         <div class="login-btn-inner">
                                                             <div class="row">
@@ -124,7 +112,7 @@
                                                                 <div class="col-lg-9">
                                                                     <div class="login-horizental cancel-wp pull-left form-bc-ele">
                                                                         <button class="btn btn-white" type="submit">Cancel</button>
-                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Submit</button>
+                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Save Changes</button>
                                                                     </div>
                                                                 </div>
                                                             </div>

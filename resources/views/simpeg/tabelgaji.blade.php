@@ -14,7 +14,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Data Pegawai</span>
+                                            <li><span class="bread-blod">Data Gaji Pegawai</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -33,7 +33,7 @@
                         <div class="sparkline13-list">
                             <div class="sparkline13-hd">
                                 <div class="main-sparkline13-hd">
-                                    <h1>DATA <span class="table-project-n"></span> PEGAWAI</h1>
+                                    <h1>DATA <span class="table-project-n"></span> GAJI PEGAWAI</h1>
                                 </div>
                             </div>
                             <div class="sparkline13-graph">
@@ -51,32 +51,26 @@
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
                                                 <th data-field="id">ID</th>
-                                                <th data-field="nip">NIP</th>
-                                                <th data-field="jabatan_id">JABATAN</th>
-                                                <th data-field="nama_pegawai">NAMA</th>
-                                                <th data-field="ttl">TEMPAT, TANGGAL LAHIR</th>
-                                                <th data-field="jenis_kelamin">JENIS KELAMIN</th>
-                                                <th data-field="agama">AGAMA</th>
-                                                <th data-field="alamat">ALAMAT</th>
-                                                <th data-field="no_telepon">NO TELEPON</th>
+                                                <th data-field="pegawai_id">NAMA PEGAWAI</th>
+                                                <th data-field="gaji_pokok">GAJI POKOK</th>
+                                                <th data-field="tunjangan">TUNJANGAN</th>
+                                                <th data-field="bonus">BONUS</th>
+                                                <th data-field="total_gaji">TOTAL GAJI</th>
                                                 <th data-field="action">ACTION</th>
                                             </tr>
                                         </thead>
-                                            @foreach($pegawai as $p)
+                                            @foreach($gaji as $g)
                                             <tr>
                                                 <td></td>
-                                                <td>{{ $p->id }}</td>
-                                                <td>{{ $p->nip }}</td>
-                                                <td>{{ $p->get_jabatan->nama_jabatan }}</td>
-			                                    <td>{{ $p->nama_pegawai }}</td>
-			                                    <td>{{ $p->ttl }}</td>
-			                                    <td>{{ $p->jenis_kelamin }}</td>
-			                                    <td>{{ $p->agama }}</td>
-                                                <td>{{ $p->alamat }}</td>
-                                                <td>{{ $p->no_telepon }}</td>
+                                                <td>{{ $g->id }}</td>
+                                                <td>{{ $g->get_pegawai->nama_pegawai }}</td>
+			                                    <td>{{ $g->gaji_pokok }}</td>
+			                                    <td>{{ $g->tunjangan }}</td>
+			                                    <td>{{ $g->bonus }}</td>
+			                                    <td>{{ $g->total_gaji }}</td>
 			                                    <td>
-                                                <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a href="/editpegawai/{{ $p->id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></a></i></button>
-                                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><a href="/deletepegawai/{{ $p->id }}"><i class="fa fa-trash-o" aria-hidden="true"></a></i></button>
+                                                <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a href="/editgaji/{{ $g->id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></a></i></button>
+                                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><a href="/deletegaji/{{ $g->id }}"><i class="fa fa-trash-o" aria-hidden="true"></a></i></button>
 			                                    </td>
 		                                    </tr>
 		                                    @endforeach
